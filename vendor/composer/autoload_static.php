@@ -11,6 +11,10 @@ class ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a
     );
 
     public static $prefixLengthsPsr4 = array (
+        'R' => 
+        array (
+            'RequestHandler\\' => 15,
+        ),
         'F' => 
         array (
             'FastRoute\\' => 10,
@@ -18,9 +22,30 @@ class ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a
     );
 
     public static $prefixDirsPsr4 = array (
+        'RequestHandler\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/ParseRequest',
+        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'SecurityLib' => 
+            array (
+                0 => __DIR__ . '/..' . '/ircmaxell/security-lib/lib',
+            ),
+        ),
+        'R' => 
+        array (
+            'RandomLib' => 
+            array (
+                0 => __DIR__ . '/..' . '/ircmaxell/random-lib/lib',
+            ),
         ),
     );
 
@@ -33,6 +58,7 @@ class ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a::$classMap;
 
         }, null, ClassLoader::class);

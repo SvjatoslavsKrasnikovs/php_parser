@@ -1,5 +1,11 @@
 {
     "require": {
-        "nikic/fast-route": "^1.3"
+        "nikic/fast-route": "^1.3",
+        "ircmaxell/random-lib": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "RequestHandler\\": "src/ParseRequest"
+        }
     }
 }
