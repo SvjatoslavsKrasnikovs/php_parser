@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25dba74abfddbcefad559abfb2e14f0c",
+    "content-hash": "b8da120113e788c5a1cf7e2abf09d937",
     "packages": [
         {
             "name": "ircmaxell/random-lib",
@@ -116,6 +116,45 @@
             "time": "2015-03-20T14:31:23+00:00"
         },
         {
+            "name": "kicken/gearman-php",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kicken/gearman-php.git",
+                "reference": "6653f2739948f390960cfce8a97084ccfb1df093"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kicken/gearman-php/zipball/6653f2739948f390960cfce8a97084ccfb1df093",
+                "reference": "6653f2739948f390960cfce8a97084ccfb1df093",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kicken\\Gearman\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Keith Maika"
+                }
+            ],
+            "description": "A PHP implementation of the Gearman protocol.",
+            "support": {
+                "issues": "https://github.com/kicken/gearman-php/issues",
+                "source": "https://github.com/kicken/gearman-php/tree/issue-7"
+            },
+            "time": "2018-06-18T06:49:05+00:00"
+        },
+        {
             "name": "nikic/fast-route",
             "version": "v1.3.0",
             "source": {
@@ -174,5 +213,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

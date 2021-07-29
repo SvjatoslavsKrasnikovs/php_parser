@@ -15,9 +15,17 @@ class ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a
         array (
             'RequestHandler\\' => 15,
         ),
+        'K' => 
+        array (
+            'Kicken\\Gearman\\' => 15,
+        ),
         'F' => 
         array (
             'FastRoute\\' => 10,
+        ),
+        'C' => 
+        array (
+            'Client\\' => 7,
         ),
     );
 
@@ -26,9 +34,17 @@ class ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a
         array (
             0 => __DIR__ . '/../..' . '/src/ParseRequest',
         ),
+        'Kicken\\Gearman\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kicken/gearman-php/src',
+        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'Client\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Client',
         ),
     );
 

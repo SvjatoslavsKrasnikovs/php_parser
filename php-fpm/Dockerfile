@@ -10,7 +10,6 @@ RUN composer install --ignore-platform-reqs --prefer-dist --no-scripts --no-prog
 RUN composer dump-autoload --optimize --apcu --no-dev
 
 FROM php:8-fpm
-RUN apt-get update
 COPY --from=composer_stage /var/www/html /var/www/html
 
 WORKDIR "/application"

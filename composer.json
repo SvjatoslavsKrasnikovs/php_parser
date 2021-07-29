@@ -1,11 +1,13 @@
 {
     "require": {
         "nikic/fast-route": "^1.3",
-        "ircmaxell/random-lib": "^1.2"
+        "ircmaxell/random-lib": "^1.2",
+        "kicken/gearman-php": "^1.4"
     },
     "autoload": {
         "psr-4": {
-            "RequestHandler\\": "src/ParseRequest"
+            "RequestHandler\\": "src/ParseRequest",
+            "Client\\": "src/Client"
         }
     }
 }

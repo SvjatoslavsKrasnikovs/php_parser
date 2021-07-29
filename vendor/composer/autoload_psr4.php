@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'RequestHandler\\' => array($baseDir . '/src/ParseRequest'),
+    'Kicken\\Gearman\\' => array($vendorDir . '/kicken/gearman-php/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
+    'Client\\' => array($baseDir . '/src/Client'),
 );

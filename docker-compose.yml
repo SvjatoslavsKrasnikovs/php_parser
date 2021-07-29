@@ -14,6 +14,11 @@ services:
       - ./logs/nginx-access.log:/var/log/nginx/access.log
       - ./logs/nginx-error.log:/var/log/nginx/error.log
 
+  gearmand:
+    image: artefactual/gearmand:1.1.18-alpine
+    ports:
+      - "4730:4730"
+
   php-fpm:
     build:
       context: .
