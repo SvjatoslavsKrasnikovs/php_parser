@@ -29,20 +29,13 @@ class FullResponse
                 'url' => $this->targetUrl,
                 'token' => $this->token,
             ),
-            'request_error' => $this->requestError,
             'results' => json_decode($this->fetchResults, JSON_UNESCAPED_SLASHES),
         );
+        if ($this->requestError !== '') {
+            $response['query']['request_error'] = $this->requestError;
+        }
+
 
         return json_encode($response, JSON_UNESCAPED_SLASHES);
-    }
-
-    public function setTargetUrl(string $targetUrl)
-    {
-        $this->targetUrl = $targetUrl;
-    }
-
-    public function setToken(string $token)
-    {
-        $this->token = $token;
     }
 }

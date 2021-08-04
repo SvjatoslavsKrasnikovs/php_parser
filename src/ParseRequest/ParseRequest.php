@@ -18,10 +18,6 @@ class ParseRequest
         $this->token = '';
     }
 
-    public function getRequest(): array {
-        return $this->request;
-    }
-
     public function validateRequest(): string {
         $err = '';
         if (!isset($this->request['url'])) {

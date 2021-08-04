@@ -29,9 +29,4 @@ if (($requestMethod === 'POST') && $requestUri === '/api/parse_canonical') {
 
     header('Content-Type: application/json');
     echo $response->createResponse();
-
-
-
-    // TODO: create response in case the parameters are invalid (error)
-
 }
