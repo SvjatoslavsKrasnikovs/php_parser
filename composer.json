@@ -7,7 +7,8 @@
     "autoload": {
         "psr-4": {
             "RequestHandler\\": "src/ParseRequest",
-            "Client\\": "src/Client"
+            "Client\\": "src/Client",
+            "Worker\\": "src/Worker"
         }
     }
 }

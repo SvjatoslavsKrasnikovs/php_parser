@@ -18,7 +18,7 @@ if (($requestMethod === 'POST') && $requestUri === '/api/parse_canonical') {
 
     // TODO: once parameters are valid start client
     $client = new ParseCanonicalClient($json_type['url']);
-    $client->run();
+    $rs = $client->run();
 
 
     // TODO: create response in case the parameters are invalid (error)
@@ -31,6 +31,7 @@ if (($requestMethod === 'POST') && $requestUri === '/api/parse_canonical') {
         $successResponse = array(
             'url' => $json_type['url'],
             'token' => $json_type['token'],
+            json_decode($rs)
         );
         echo json_encode($successResponse, JSON_UNESCAPED_SLASHES);
     }

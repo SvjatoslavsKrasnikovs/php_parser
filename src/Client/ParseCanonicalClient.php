@@ -2,6 +2,8 @@
 
 namespace Client;
 
+use \Kicken\Gearman\Client;
+
 class ParseCanonicalClient {
     private string $url;
     function __construct(string $url) {
@@ -9,9 +11,9 @@ class ParseCanonicalClient {
     }
 
     public function run(): string {
-        $client = new \Kicken\Gearman\Client('127.0.0.1:4730');
-        $job = $client->submitJob('rot13', 'Foobar');
+        $client = new Client('gearmand:4730');
+        $job = $client->submitJob('rot13', $this->url);
         $client->wait();
-        return 'LOL';
+        return $job->getResult();
     }
 }
