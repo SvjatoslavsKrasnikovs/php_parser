@@ -2,6 +2,7 @@
 require '/application/vendor/autoload.php';
 
 use RequestHandler\ParseRequest;
+use ResponseHandler\FullResponse;
 use Client\ParseCanonicalClient;
 
 $requestBody = file_get_contents('php://input');
@@ -12,33 +13,24 @@ $json_type = json_decode($requestBody, true);
 
 // Primitive router. For now, let's support only a single endpoint and request method
 if (($requestMethod === 'POST') && $requestUri === '/api/parse_canonical') {
-    // TODO: validate input parameters
+    // Parse and validate input parameters
     $parser = new ParseRequest($json_type);
-    $parser->validateRequest();
+    $requestError = $parser->validateRequest();
 
-    // TODO: once parameters are valid start client
-    $client = new ParseCanonicalClient($json_type['url']);
-    $rs = $client->run();
+    // FullResponse object will be in charge of putting together the response
+    // Should work no matter if the request is valid or not
+    $response = new FullResponse($parser->getTargetUrl(), $parser->getToken(),$requestError);
+
+    if ($parser->getIsValid()) {
+        $client = new ParseCanonicalClient($parser->getTargetUrl());
+        $response->addFetchResults($client->run());
+    }
+
+    header('Content-Type: application/json');
+    echo $response->createResponse();
+
 
 
     // TODO: create response in case the parameters are invalid (error)
-    header('Content-Type: application/json');
-
-    if (!$parser->getIsValid()) {
-        $errorResponse = array('error' => 'Invalid request');
-        echo json_encode($errorResponse);
-    } else {
-        $successResponse = array(
-            'url' => $json_type['url'],
-            'token' => $json_type['token'],
-            json_decode($rs)
-        );
-        echo json_encode($successResponse, JSON_UNESCAPED_SLASHES);
-    }
 
 }
-
-/*$factory = new RandomLib\Factory;
-$generator = $factory->getGenerator(new SecurityLib\Strength(SecurityLib\Strength::MEDIUM));
-$bytes = $generator->generate(32);
-echo $bytes;*/

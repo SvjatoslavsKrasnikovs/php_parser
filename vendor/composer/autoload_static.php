@@ -11,8 +11,13 @@ class ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Worker\\' => 7,
+        ),
         'R' => 
         array (
+            'ResponseHandler\\' => 16,
             'RequestHandler\\' => 15,
         ),
         'K' => 
@@ -30,6 +35,14 @@ class ComposerStaticInit089460ee5f4306e2d6a8c16f65c6152a
     );
 
     public static $prefixDirsPsr4 = array (
+        'Worker\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Worker',
+        ),
+        'ResponseHandler\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/FullResponse',
+        ),
         'RequestHandler\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/ParseRequest',

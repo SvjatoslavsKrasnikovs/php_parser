@@ -12,7 +12,7 @@ class ParseCanonicalClient {
 
     public function run(): string {
         $client = new Client('gearmand:4730');
-        $job = $client->submitJob('rot13', $this->url);
+        $job = $client->submitJob('parse_single_canonical', $this->url);
         $client->wait();
         return $job->getResult();
     }

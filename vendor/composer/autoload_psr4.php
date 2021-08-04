@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Worker\\' => array($baseDir . '/src/Worker'),
+    'ResponseHandler\\' => array($baseDir . '/src/FullResponse'),
     'RequestHandler\\' => array($baseDir . '/src/ParseRequest'),
     'Kicken\\Gearman\\' => array($vendorDir . '/kicken/gearman-php/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),

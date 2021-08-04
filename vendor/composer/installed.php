@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4b225484d52c74079e95ffcf88f99df9b997a682',
+        'reference' => '825e32ac7c6aa61aa7481208cc1bfa7c6740ffe6',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4b225484d52c74079e95ffcf88f99df9b997a682',
+            'reference' => '825e32ac7c6aa61aa7481208cc1bfa7c6740ffe6',
             'dev_requirement' => false,
         ),
         'ircmaxell/random-lib' => array(
