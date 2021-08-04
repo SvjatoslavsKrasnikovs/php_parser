@@ -37,13 +37,11 @@ class ParseRequest
         if (!isset($this->request['token'])) {
             $err = 'Expected field not present: token';
         } else {
+            // Later on we should actually check this against a registred token;
+            if ($this->request['token'] !== self::TOKEN) {
+                $err = 'Invalid token';
+            }
             $this->setToken($this->request['token']);
-        }
-
-
-        // Later on we should actually check this against a registred token;
-        if ($this->request['token'] !== self::TOKEN) {
-            $err = 'Invalid token';
         }
 
         if ($err == '') {

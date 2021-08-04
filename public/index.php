@@ -18,9 +18,10 @@ if (($requestMethod === 'POST') && $requestUri === '/api/parse_canonical') {
     $requestError = $parser->validateRequest();
 
     // FullResponse object will be in charge of putting together the response
-    // Should work no matter if the request is valid or not
-    $response = new FullResponse($parser->getTargetUrl(), $parser->getToken(),$requestError);
+    // Should work no matter if the request is valid or not. In case either of fields are not present,
+    $response = new FullResponse($parser->getTargetUrl(), $parser->getToken(), $requestError);
 
+    // Only run the client in case all fields are valid
     if ($parser->getIsValid()) {
         $client = new ParseCanonicalClient($parser->getTargetUrl());
         $response->addFetchResults($client->run());
