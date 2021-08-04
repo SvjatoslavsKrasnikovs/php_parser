@@ -29,3 +29,8 @@ services:
       - ./public:/application/public
       - ./src:/application/src
       - ./vendor:/application/vendor
+
+  splash:
+    image: scrapinghub/splash
+    ports:
+      - "8050:8050"
